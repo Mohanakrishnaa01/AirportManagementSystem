@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Test Event</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 18px;
+            font-size: 16px;
+            margin: 0 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        form {
+            width: 30%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            display: inline-block;
+            width: calc(70% - 10px);
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Add Test Events</h1>
+</header>
+
+<div class="navbar">
+    <a href="{% url 'viewAirplanes' %}">View Airplanes</a>
+    <a href="{% url 'viewTechnicians' %}">View Technicians</a>
+    <a href="{% url 'viewTestingevents' %}">View Testing Events</a>
+    <a href="{% url 'addTestevent' %}">Add Test Event</a>
+    <a href="{% url 'addTechnicians' %}">Add Technicians</a>
+    <a href="{% url 'addPlanes' %}">Add Planes</a>
+    <a href="{% url 'removeTechnician' %}">Remove Technician</a>
+</div>
+
+<form action="{% url 'addTestevent' %}" method="post">
+    {% csrf_token %}
+    
+    <label for="event-id">Event ID:</label>
+    <input type="text" id="event-id" name="event_id" required>
+
+    <label for="test-no">Test No:</label>
+    <input type="text" id="test-no" name="test_no" required>
+
+    <label for="tech-id">Tech ID:</label>
+    <input type="text" id="tech-id" name="tech_id" required>
+
+    <label for="plane-reg-no">Plane Registration No:</label>
+    <input type="text" id="plane-reg-no" name="plane_regNo" required>
+
+    <label for="test-date">Test Date:</label>
+    <input type="date" id="test-date" name="test_date" required>
+
+    <label for="expected-hours">Expected Hours:</label>
+    <input type="text" id="expected-hours" name="expected_hours" required>
+
+    <button type="submit">Submit</button>
+</form>
+
+{% if error_message %}
+<script>
+    console.log(1)
+    alert("{{ error_message }}");
+</script>
+{% endif %}
+
+{% if success_message %}
+<script>
+    alert("{{ success_message }}");
+</script>
+{% endif %}
+
+</body>
+</html>

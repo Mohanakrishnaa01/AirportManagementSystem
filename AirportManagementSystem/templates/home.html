@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <style>
+      body {
+        background-image: url("https://images.unsplash.com/photo-1544975331-f15ed1a1c28f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        font-family: "Arial", sans-serif;
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        padding: 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #3498db;
+        transition: background-color 0.3s ease;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      button:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+    <div class="buttons">
+      <button><a href="{% url 'viewAirplanes' %}">View Airplanes</a></button>
+      <button>
+        <a href="{% url 'viewTechnicians' %}">View Technicians</a>
+      </button>
+      <button><a href="{% url 'viewTestingevents' %}">View Testing Events</a></button>
+      <button><a href="{% url 'addTestevent' %}">Add Test Event</a></button>
+      <button><a href="{% url 'addTechnicians' %}">Add Technicians</a></button>
+      <button><a href="{% url 'addPlanes' %}">Add Planes</a></button>
+      <button><a href="{% url 'removeTechnician' %}">Remove Technician</a></button>
+    </div>
+  </body>
+</html>

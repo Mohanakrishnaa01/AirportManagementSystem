@@ -1,0 +1,121 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+
+    <style>
+        .signup{
+            width: 300px;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup">
+        <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %}
+            
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name...">
+
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email...">
+
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" placeholder="Enter your address...">
+
+            <label for="phoneno">Phone Number:</label>
+            <input type="text" name="phoneno" id="phoneno" placeholder="Enter your PhoneNumber...">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Make your password...">
+
+            <input type="submit" name="submit" id="submit">
+        </form>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+
+        .signup {
+            width: 300px;
+            background-color: #fff; /* Set a background color for the form container */
+            padding: 20px;
+            border-radius: 8px; /* Add rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc; /* Add a border */
+            border-radius: 4px; /* Add rounded corners */
+        }
+
+        input[type="submit"] {
+            background-color: #3498db; /* Set a green background color */
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup">
+        <h1>SignUp</h1>
+        <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %}
+            
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name...">
+
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email...">
+
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" placeholder="Enter your address...">
+
+            <label for="phoneno">Phone Number:</label>
+            <input type="text" name="phoneno" id="phoneno" placeholder="Enter your PhoneNumber...">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Make your password...">
+
+            <input type="submit" name="submit" id="submit">
+        </form>
+    </div>
+</body>
+</html>

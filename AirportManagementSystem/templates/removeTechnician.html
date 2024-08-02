@@ -1,0 +1,120 @@
+<!-- templates/remove_technician.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Technician</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 18px;
+            font-size: 16px;
+            margin: 0 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            height: 100%;
+        }
+
+        form {
+            width: 20%;
+            margin: 20px;
+        }
+
+        label {
+            display: block; 
+            margin-bottom: 8px;
+        }
+
+        input {
+            display: block; 
+            width: 100%;  /* Use 100% width for the input */
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            padding: 8px;
+            cursor: pointer;
+            width: 100%;  /* Use 100% width for the button */
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Remove Technician</h1>
+    </header>
+
+    <div class="navbar">
+        <a href="{% url 'viewAirplanes' %}">View Airplanes</a>
+        <a href="{% url 'viewTechnicians' %}">View Technicians</a>
+        <a href="{% url 'viewTestingevents' %}">View Testing Events</a>
+        <a href="{% url 'addTestevent' %}">Add Test Event</a>
+        <a href="{% url 'addTechnicians' %}">Add Technicians</a>
+        <a href="{% url 'addPlanes' %}">Add Planes</a>
+        <a href="{% url 'removeTechnician' %}">Remove Technician</a>
+    </div>
+
+    <div class="center-container">
+        <form action="{% url 'removeTechnician' %}" method="post">
+            {% csrf_token %}
+            <label for="tech_id">Tech_ID:</label>
+            <input type="text" id="tech_id" name="tech_id" required>
+
+            <!-- Add a Remove button with hover effect -->
+            <button type="submit">Remove</button>
+        </form>
+    </div>
+</body>
+</html>

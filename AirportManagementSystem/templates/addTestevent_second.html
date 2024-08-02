@@ -1,0 +1,61 @@
+<!-- templates/add_test_event.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Test Event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 40%;
+            margin: 20px;
+        }
+
+        label {
+            display: block; 
+            margin-bottom: 8px;
+        }
+
+        input {
+            display: block; 
+            width: 40%; 
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            padding: 8px;
+            cursor: pointer;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Test Event</h1>
+    <form action="/submit_test_event" method="post">
+        <label for="event-id">Event ID:</label>
+        <input type="text" id="event-id" name="event_id" required>
+
+        <label for="tech-id">Tech ID:</label>
+        <input type="text" id="tech-id" name="tech_id" required>
+
+        <label for="plane_reg_no">Plane No:</label>
+        <input type="text" id="plane_reg_no" name="plane-reg-no" required>
+
+        <label for="test_date">Test Date:</label>
+        <input type="date" id="test_date" name="test-date" required>
+
+        <label for="expected_hours">Expected Hours:</label>
+        <input type="time" id="expected_hours" name="expected-hours" required>
+
+        <!-- Add more input fields as needed -->
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
